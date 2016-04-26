@@ -31,11 +31,11 @@ development:
   password:
 
 production:
+  database: emptyapp_development
   adapter: postgresql
-  encoding: utf8
-  database: project_production
+  encoding: unicode
   pool: 5
-  username: 
+  username: radhikaprad
   password:
 
   # The specified database role being used to connect to postgres.

@@ -11,20 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423232055) do
+ActiveRecord::Schema.define(version: 20160426232508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
- 
-  
-
   create_table "govcensus", force: :cascade do |t|
-    t.string "govid",         limit: 100
-    t.string "label",         limit: 100
-    t.string "concept",       limit: 100
-    t.string "predicatetype", limit: 3
+    t.integer  "idd"
+    t.string   "govid"
+    t.string   "label"
+    t.string   "concept"
+    t.string   "predicatetype"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
-
 
 end

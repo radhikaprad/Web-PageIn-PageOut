@@ -21677,3 +21677,1086 @@ Started GET "/tabledata/101" for ::1 at 2016-04-26 17:47:41 -0500
 Processing by WelcomeController#tabledata as JSON
   Parameters: {"i"=>"101"}
 Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:09:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (2.6ms)
+Completed 200 OK in 34ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:09:42 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:09:43 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `govcensus' for #<WelcomeController:0x007feda94a4f18>):
+  app/controllers/welcome_controller.rb:24:in `everyrowindb'
+  app/controllers/welcome_controller.rb:74:in `tabledata'
+
+
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (1.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.text.erb (71.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGovcensus (20160426231505)
+  [1m[35m (5.4ms)[0m  BEGIN
+  [1m[36m (11.8ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGovcensus (20160426231505)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (15.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (13.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGovcensus (20160426231505)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGovcensus (20160426231505)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateGovcensus (20160426232508)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (25.3ms)[0m  [1mCREATE TABLE "govcensus" ("id" serial primary key, "idd" integer, "govid" character varying, "label" character varying, "concept" character varying, "predicatetype" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160426232508"]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (4.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'govcensus'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2016-04-26 18:27:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (2.1ms)
+Completed 200 OK in 34ms (Views: 18.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:27:16 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:27:16 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (2.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:27:39 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:27:40 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT "govcensus".* FROM "govcensus"[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:31:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (1.9ms)
+Completed 200 OK in 29ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:31:51 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:31:52 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.5ms)[0m  SELECT "govcensus".* FROM "govcensus"
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:33:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:33:51 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[36mGovcensu Load (0.5ms)[0m  [1mSELECT "govcensus".* FROM "govcensus"[0m
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:36:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/radhikamanivannan/Desktop/sample/app/controllers/welcome_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/welcome_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.7ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.8ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (95.4ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (180.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:36:13 -0500
+
+SyntaxError (/Users/radhikamanivannan/Desktop/sample/app/controllers/welcome_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/welcome_controller.rb:52: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.5ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/radhikamanivannan/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:36:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (1.5ms)
+Completed 200 OK in 22ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:36:51 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (23.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 2], ["govid", "B20005E_045M"], ["label", "Margin of Error "], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.145080"], ["updated_at", "2016-04-26 23:36:53.145080"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 3], ["govid", "B06004HPR_002M"], ["label", "Margin of Error "], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.179173"], ["updated_at", "2016-04-26 23:36:53.179173"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 4], ["govid", "B24126_438E"], ["label", "Multiple machine"], ["concept", "B24126.  Detaile"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.183402"], ["updated_at", "2016-04-26 23:36:53.183402"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 5], ["govid", "B24010I_058E"], ["label", "Female:!!Service"], ["concept", "B24010I.  SEX BY"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.186732"], ["updated_at", "2016-04-26 23:36:53.186732"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 6], ["govid", "B19056_002M"], ["label", "Margin of Error "], ["concept", "B19056.  Supplem"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.191086"], ["updated_at", "2016-04-26 23:36:53.191086"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 7], ["govid", "B25032C_006M"], ["label", "Margin of Error "], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.194877"], ["updated_at", "2016-04-26 23:36:53.194877"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 8], ["govid", "B20001_016M"], ["label", "Margin of Error "], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.198600"], ["updated_at", "2016-04-26 23:36:53.198600"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 9], ["govid", "B20005E_045E"], ["label", "Male:!!Other:!!W"], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.201827"], ["updated_at", "2016-04-26 23:36:53.201827"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 10], ["govid", "B06004HPR_002E"], ["label", "Born in Puerto R"], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.205504"], ["updated_at", "2016-04-26 23:36:53.205504"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 11], ["govid", "B18120_005M"], ["label", "Margin of Error "], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.209757"], ["updated_at", "2016-04-26 23:36:53.209757"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 12], ["govid", "B24010I_058M"], ["label", "Margin of Error "], ["concept", "B24010I.  SEX BY"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.213207"], ["updated_at", "2016-04-26 23:36:53.213207"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 13], ["govid", "B02019_008E"], ["label", "Total Groups Tal"], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.216881"], ["updated_at", "2016-04-26 23:36:53.216881"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 14], ["govid", "B25032C_006E"], ["label", "5 to 9"], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.220673"], ["updated_at", "2016-04-26 23:36:53.220673"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 15], ["govid", "B18120_005E"], ["label", "In the labor for"], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.224009"], ["updated_at", "2016-04-26 23:36:53.224009"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 16], ["govid", "B05007_065M"], ["label", "Margin of Error "], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.227333"], ["updated_at", "2016-04-26 23:36:53.227333"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 17], ["govid", "B27014_038M"], ["label", "Margin of Error "], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.230788"], ["updated_at", "2016-04-26 23:36:53.230788"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 18], ["govid", "B02019_007M"], ["label", "Margin of Error "], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.233952"], ["updated_at", "2016-04-26 23:36:53.233952"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 19], ["govid", "C08513_012E"], ["label", "Car, truck, or v"], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.237458"], ["updated_at", "2016-04-26 23:36:53.237458"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 20], ["govid", "B25087_019M"], ["label", "Margin of Error "], ["concept", "B25087.  Mortgag"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.241852"], ["updated_at", "2016-04-26 23:36:53.241852"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 21], ["govid", "B05007_065E"], ["label", "Latin America:!!"], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.245847"], ["updated_at", "2016-04-26 23:36:53.245847"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 22], ["govid", "B27014_038E"], ["label", "Did not work:!!M"], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.249087"], ["updated_at", "2016-04-26 23:36:53.249087"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 23], ["govid", "B24126_437M"], ["label", "Margin of Error "], ["concept", "B24126.  Detaile"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.252108"], ["updated_at", "2016-04-26 23:36:53.252108"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 24], ["govid", "C08513_012M"], ["label", "Margin of Error "], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.255207"], ["updated_at", "2016-04-26 23:36:53.255207"]]
+  [1m[36m (3.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 25], ["govid", "B20001_017E"], ["label", "Male:!!$45,000 t"], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.262487"], ["updated_at", "2016-04-26 23:36:53.262487"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 26], ["govid", "B19056_002E"], ["label", "With Supplementa"], ["concept", "B19056.  Supplem"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.265787"], ["updated_at", "2016-04-26 23:36:53.265787"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 27], ["govid", "B25087_019E"], ["label", "Housing units wi"], ["concept", "B25087.  Mortgag"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.269178"], ["updated_at", "2016-04-26 23:36:53.269178"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 28], ["govid", "B19056_001M"], ["label", "Margin of Error "], ["concept", "B19056.  Supplem"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.272746"], ["updated_at", "2016-04-26 23:36:53.272746"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 29], ["govid", "B02019_009E"], ["label", "Total Groups Tal"], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.276220"], ["updated_at", "2016-04-26 23:36:53.276220"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 30], ["govid", "B24126_439E"], ["label", "Tool and die mak"], ["concept", "B24126.  Detaile"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.279921"], ["updated_at", "2016-04-26 23:36:53.279921"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 31], ["govid", "B20001_015M"], ["label", "Margin of Error "], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.284302"], ["updated_at", "2016-04-26 23:36:53.284302"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 32], ["govid", "B06004HPR_003M"], ["label", "Margin of Error "], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.288715"], ["updated_at", "2016-04-26 23:36:53.288715"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 33], ["govid", "B20005E_044M"], ["label", "Margin of Error "], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.292990"], ["updated_at", "2016-04-26 23:36:53.292990"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 34], ["govid", "B25032C_005M"], ["label", "Margin of Error "], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.296184"], ["updated_at", "2016-04-26 23:36:53.296184"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 35], ["govid", "B08505A_001M"], ["label", "Margin of Error "], ["concept", "B08505A.  MEANS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.299107"], ["updated_at", "2016-04-26 23:36:53.299107"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 36], ["govid", "B24010I_059E"], ["label", "Female:!!Service"], ["concept", "B24010I.  SEX BY"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.301503"], ["updated_at", "2016-04-26 23:36:53.301503"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 37], ["govid", "B02019_009M"], ["label", "Margin of Error "], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.304563"], ["updated_at", "2016-04-26 23:36:53.304563"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 38], ["govid", "B18120_004M"], ["label", "Margin of Error "], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.308040"], ["updated_at", "2016-04-26 23:36:53.308040"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 39], ["govid", "B06004HPR_003E"], ["label", "Born in the Unit"], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.311879"], ["updated_at", "2016-04-26 23:36:53.311879"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 40], ["govid", "B20005E_044E"], ["label", "Male:!!Other:!!W"], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.315568"], ["updated_at", "2016-04-26 23:36:53.315568"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 41], ["govid", "B25032C_005E"], ["label", "3 or 4"], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.320166"], ["updated_at", "2016-04-26 23:36:53.320166"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 42], ["govid", "B08505A_001E"], ["label", "Total:"], ["concept", "B08505A.  MEANS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.324514"], ["updated_at", "2016-04-26 23:36:53.324514"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 43], ["govid", "B24010I_059M"], ["label", "Margin of Error "], ["concept", "B24010I.  SEX BY"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.328534"], ["updated_at", "2016-04-26 23:36:53.328534"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 44], ["govid", "B27014_039M"], ["label", "Margin of Error "], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.332921"], ["updated_at", "2016-04-26 23:36:53.332921"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 45], ["govid", "B05007_066M"], ["label", "Margin of Error "], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.337211"], ["updated_at", "2016-04-26 23:36:53.337211"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 46], ["govid", "B18120_004E"], ["label", "In the labor for"], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.340673"], ["updated_at", "2016-04-26 23:36:53.340673"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 47], ["govid", "C08513_013E"], ["label", "Car, truck, or v"], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.343614"], ["updated_at", "2016-04-26 23:36:53.343614"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 48], ["govid", "B02019_008M"], ["label", "Margin of Error "], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.346710"], ["updated_at", "2016-04-26 23:36:53.346710"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 49], ["govid", "B27014_039E"], ["label", "Did not work:!!M"], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.349917"], ["updated_at", "2016-04-26 23:36:53.349917"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 50], ["govid", "B24126_438M"], ["label", "Margin of Error "], ["concept", "B24126.  Detaile"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.353369"], ["updated_at", "2016-04-26 23:36:53.353369"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 51], ["govid", "B19056_001E"], ["label", "Total:"], ["concept", "B19056.  Supplem"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.357594"], ["updated_at", "2016-04-26 23:36:53.357594"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 52], ["govid", "B05007_066E"], ["label", "Latin America:!!"], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.361091"], ["updated_at", "2016-04-26 23:36:53.361091"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 53], ["govid", "B20001_016E"], ["label", "Male:!!$40,000 t"], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.365024"], ["updated_at", "2016-04-26 23:36:53.365024"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 54], ["govid", "C08513_013M"], ["label", "Margin of Error "], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.369006"], ["updated_at", "2016-04-26 23:36:53.369006"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 55], ["govid", "B20005E_043M"], ["label", "Margin of Error "], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.372508"], ["updated_at", "2016-04-26 23:36:53.372508"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 56], ["govid", "B06004HPR_004M"], ["label", "Margin of Error "], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.375884"], ["updated_at", "2016-04-26 23:36:53.375884"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 57], ["govid", "B25032C_008M"], ["label", "Margin of Error "], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.379374"], ["updated_at", "2016-04-26 23:36:53.379374"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 58], ["govid", "B20001_014E"], ["label", "Male:!!$30,000 t"], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.382441"], ["updated_at", "2016-04-26 23:36:53.382441"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 59], ["govid", "C08513_010M"], ["label", "Margin of Error "], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.385949"], ["updated_at", "2016-04-26 23:36:53.385949"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 60], ["govid", "B25127_070M"], ["label", "Margin of Error "], ["concept", "B25127.  Tenure "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.390041"], ["updated_at", "2016-04-26 23:36:53.390041"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 61], ["govid", "B20005E_043E"], ["label", "Male:!!Other:!!W"], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.393827"], ["updated_at", "2016-04-26 23:36:53.393827"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 62], ["govid", "B02019_006E"], ["label", "Total Groups Tal"], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.397340"], ["updated_at", "2016-04-26 23:36:53.397340"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 63], ["govid", "B06004HPR_004E"], ["label", "Native; born els"], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.400533"], ["updated_at", "2016-04-26 23:36:53.400533"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 64], ["govid", "B25032C_008E"], ["label", "20 to 49"], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.404249"], ["updated_at", "2016-04-26 23:36:53.404249"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 65], ["govid", "B20001_014M"], ["label", "Margin of Error "], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.407595"], ["updated_at", "2016-04-26 23:36:53.407595"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 66], ["govid", "B24091_002E"], ["label", "Private for-prof"], ["concept", "B24091. Class of"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.411550"], ["updated_at", "2016-04-26 23:36:53.411550"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 67], ["govid", "B25127_070E"], ["label", "Renter occupied:"], ["concept", "B25127.  Tenure "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.414983"], ["updated_at", "2016-04-26 23:36:53.414983"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 68], ["govid", "B18120_007M"], ["label", "Margin of Error "], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.418459"], ["updated_at", "2016-04-26 23:36:53.418459"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 69], ["govid", "B05007_067M"], ["label", "Margin of Error "], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.422521"], ["updated_at", "2016-04-26 23:36:53.422521"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 70], ["govid", "B27014_036M"], ["label", "Margin of Error "], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.425626"], ["updated_at", "2016-04-26 23:36:53.425626"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 71], ["govid", "B02019_005M"], ["label", "Margin of Error "], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.429217"], ["updated_at", "2016-04-26 23:36:53.429217"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 72], ["govid", "B24091_002M"], ["label", "Margin of Error "], ["concept", "B24091. Class of"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.432516"], ["updated_at", "2016-04-26 23:36:53.432516"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 73], ["govid", "B18120_007E"], ["label", "In the labor for"], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.436459"], ["updated_at", "2016-04-26 23:36:53.436459"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 74], ["govid", "B05007_067E"], ["label", "Latin America:!!"], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.439980"], ["updated_at", "2016-04-26 23:36:53.439980"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 75], ["govid", "B27014_036E"], ["label", "Did not work:!!M"], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.443679"], ["updated_at", "2016-04-26 23:36:53.443679"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 76], ["govid", "B20001_015E"], ["label", "Male:!!$35,000 t"], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.447264"], ["updated_at", "2016-04-26 23:36:53.447264"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 77], ["govid", "B24126_439M"], ["label", "Margin of Error "], ["concept", "B24126.  Detaile"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.450674"], ["updated_at", "2016-04-26 23:36:53.450674"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 78], ["govid", "C08513_010E"], ["label", "Car, truck, or v"], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.454320"], ["updated_at", "2016-04-26 23:36:53.454320"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 79], ["govid", "B25032C_007M"], ["label", "Margin of Error "], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.458530"], ["updated_at", "2016-04-26 23:36:53.458530"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 80], ["govid", "B06004HPR_005M"], ["label", "Margin of Error "], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.462919"], ["updated_at", "2016-04-26 23:36:53.462919"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 81], ["govid", "B20005E_042M"], ["label", "Margin of Error "], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.466952"], ["updated_at", "2016-04-26 23:36:53.466952"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 82], ["govid", "C08513_011M"], ["label", "Margin of Error "], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.471264"], ["updated_at", "2016-04-26 23:36:53.471264"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 83], ["govid", "B20001_013E"], ["label", "Male:!!$25,000 t"], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.475157"], ["updated_at", "2016-04-26 23:36:53.475157"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 84], ["govid", "B25127_071M"], ["label", "Margin of Error "], ["concept", "B25127.  Tenure "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.479082"], ["updated_at", "2016-04-26 23:36:53.479082"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 85], ["govid", "B25032C_007E"], ["label", "10 to 19"], ["concept", "B25032C.  UNITS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.482348"], ["updated_at", "2016-04-26 23:36:53.482348"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 86], ["govid", "B06004HPR_005E"], ["label", "Foreign born"], ["concept", "B06004HPR.  Plac"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.486140"], ["updated_at", "2016-04-26 23:36:53.486140"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 87], ["govid", "B20005E_042E"], ["label", "Male:!!Other:!!W"], ["concept", "B20005E. Sex by "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.489553"], ["updated_at", "2016-04-26 23:36:53.489553"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 88], ["govid", "B02019_007E"], ["label", "Total Groups Tal"], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.493311"], ["updated_at", "2016-04-26 23:36:53.493311"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 89], ["govid", "B18120_006M"], ["label", "Margin of Error "], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.496764"], ["updated_at", "2016-04-26 23:36:53.496764"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 90], ["govid", "B24091_001E"], ["label", "Total:"], ["concept", "B24091. Class of"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.500450"], ["updated_at", "2016-04-26 23:36:53.500450"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 91], ["govid", "B20001_013M"], ["label", "Margin of Error "], ["concept", "B20001. Sex by E"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.504081"], ["updated_at", "2016-04-26 23:36:53.504081"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 92], ["govid", "B25127_071E"], ["label", "Renter occupied:"], ["concept", "B25127.  Tenure "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.508201"], ["updated_at", "2016-04-26 23:36:53.508201"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 93], ["govid", "B02019_006M"], ["label", "Margin of Error "], ["concept", "B02019.  Native "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.511979"], ["updated_at", "2016-04-26 23:36:53.511979"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 94], ["govid", "B27014_037M"], ["label", "Margin of Error "], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.516251"], ["updated_at", "2016-04-26 23:36:53.516251"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 95], ["govid", "B05007_068M"], ["label", "Margin of Error "], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.519557"], ["updated_at", "2016-04-26 23:36:53.519557"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 96], ["govid", "B24091_001M"], ["label", "Margin of Error "], ["concept", "B24091. Class of"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.523694"], ["updated_at", "2016-04-26 23:36:53.523694"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 97], ["govid", "B18120_006E"], ["label", "In the labor for"], ["concept", "B18120.  Employm"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.527144"], ["updated_at", "2016-04-26 23:36:53.527144"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 98], ["govid", "B27014_037E"], ["label", "Did not work:!!M"], ["concept", "B27014.  Public "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.531378"], ["updated_at", "2016-04-26 23:36:53.531378"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 99], ["govid", "B05007_068E"], ["label", "Latin America:!!"], ["concept", "B05007.  PLACE O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.534595"], ["updated_at", "2016-04-26 23:36:53.534595"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 100], ["govid", "C08513_011E"], ["label", "Car, truck, or v"], ["concept", "C08513.  MEANS O"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.537740"], ["updated_at", "2016-04-26 23:36:53.537740"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["idd", 101], ["govid", "B08505A_004M"], ["label", "Margin of Error "], ["concept", "B08505A.  MEANS "], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.541127"], ["updated_at", "2016-04-26 23:36:53.541127"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "govcensus" ("idd", "govid", "label", "concept", "predicatetype", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["idd", 102], ["govid", "B24010I_054M"], ["label", "Margin of Error "], ["concept", "B24010I.  SEX BY"], ["predicatetype", "int"], ["created_at", "2016-04-26 23:36:53.544253"], ["updated_at", "2016-04-26 23:36:53.544253"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 1933ms (Views: 0.2ms | ActiveRecord: 143.6ms)
+  [1m[36mGovcensu Load (0.9ms)[0m  [1mSELECT "govcensus".* FROM "govcensus"[0m
+
+
+Started GET "/" for ::1 at 2016-04-26 18:40:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (1.5ms)
+Completed 200 OK in 23ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:40:36 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.8ms)[0m  SELECT "govcensus".* FROM "govcensus"
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:43:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (2.3ms)
+Completed 200 OK in 36ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:43:39 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.9ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 58ms (Views: 0.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:45:53 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:45:53 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.5ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (1.6ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:46:56 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.5ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:46:56 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.7ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:47:46 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:47:47 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.0ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:48:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (1.8ms)
+Completed 200 OK in 26ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:48:11 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.8ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.6ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:49:13 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:49:14 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.0ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (1.1ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:50:01 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.5ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:50:01 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.2ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:50:16 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.4ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:50:16 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.9ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.4ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:50:39 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:50:39 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.7ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.4ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:51:14 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:51:14 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.5ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 43ms (Views: 0.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:51:50 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:51:50 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.4ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:51:53 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:51:53 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.1ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:51:57 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:51:57 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.9ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:53:53 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:53:54 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 36ms (Views: 0.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:55:27 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.7ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:55:28 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (0.7ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tabledata/3" for ::1 at 2016-04-26 18:55:31 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"3"}
+  [1m[35mGovcensu Load (1.4ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 3]]
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tabledata/4" for ::1 at 2016-04-26 18:55:33 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"4"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 4]]
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/5" for ::1 at 2016-04-26 18:55:48 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"5"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 5]]
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-04-26 18:55:51 -0500
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb (0.9ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tabledata/2" for ::1 at 2016-04-26 18:55:52 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"2"}
+  [1m[35mGovcensu Load (1.0ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 2]]
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tabledata/3" for ::1 at 2016-04-26 18:55:52 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"3"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 3]]
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/4" for ::1 at 2016-04-26 18:55:53 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"4"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 4]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/5" for ::1 at 2016-04-26 18:55:53 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"5"}
+  [1m[35mGovcensu Load (0.9ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 5]]
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tabledata/6" for ::1 at 2016-04-26 18:55:54 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"6"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 6]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/7" for ::1 at 2016-04-26 18:55:54 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"7"}
+  [1m[35mGovcensu Load (1.1ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 7]]
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/tabledata/8" for ::1 at 2016-04-26 18:55:55 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"8"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 8]]
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tabledata/9" for ::1 at 2016-04-26 18:55:55 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"9"}
+  [1m[35mGovcensu Load (0.8ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 9]]
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tabledata/10" for ::1 at 2016-04-26 18:55:56 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"10"}
+  [1m[35mGovcensu Load (0.5ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 10]]
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/11" for ::1 at 2016-04-26 18:55:56 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"11"}
+  [1m[35mGovcensu Load (0.5ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 11]]
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/12" for ::1 at 2016-04-26 18:55:57 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"12"}
+  [1m[35mGovcensu Load (0.7ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 12]]
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tabledata/13" for ::1 at 2016-04-26 18:55:57 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"13"}
+  [1m[35mGovcensu Load (1.3ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.6ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 13]]
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/tabledata/14" for ::1 at 2016-04-26 18:55:58 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"14"}
+  [1m[35mGovcensu Load (0.7ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.3ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 14]]
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tabledata/15" for ::1 at 2016-04-26 18:55:58 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"15"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 15]]
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/16" for ::1 at 2016-04-26 18:55:59 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"16"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 16]]
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tabledata/17" for ::1 at 2016-04-26 18:56:00 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"17"}
+  [1m[35mGovcensu Load (0.6ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 17]]
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tabledata/18" for ::1 at 2016-04-26 18:56:00 -0500
+Processing by WelcomeController#tabledata as JSON
+  Parameters: {"i"=>"18"}
+  [1m[35mGovcensu Load (0.5ms)[0m  SELECT "govcensus".* FROM "govcensus"
+  [1m[36mGovcensu Load (0.2ms)[0m  [1mSELECT  "govcensus".* FROM "govcensus" WHERE "govcensus"."idd" = $1 LIMIT 1[0m  [["idd", 18]]
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.7ms)

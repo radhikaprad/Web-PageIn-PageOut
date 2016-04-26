@@ -8,7 +8,7 @@ class WelcomeController < ActionController::Base
 	def connect
 		@conn = PG.connect(
 			:dbname => "emptyapp_development",
-			:user => "radhikaprad",
+			:user => "",
 			:password => "")
 		
 	end
@@ -20,22 +20,29 @@ class WelcomeController < ActionController::Base
 	def everyrowindb(rowid)
 		connect
 		puts "hello"
-		result=@conn.exec("SELECT count(govid) FROM govcensus")
+		#result=@conn.exec("SELECT count(govid) FROM govcensus")
+		result=Govcensu.all
+		#puts result
 		puts "bye"
 
-		for i in result
-			puts i['count']
-			if i['count']== "0"
-				puts i['count']
-				readjson
+		if result.length==0
+			readjson
+		end
+		# for i in result
+		# 	puts i['count']
+		# 	if i['count']== "0"
+		# 		puts i['count']
+		# 		readjson
 			
 		#populate the database
 			
-			end
-		end
+		# 	end
+		# end
 
 		begin
-			allrowsresult = @conn.exec("SELECT * FROM govcensus where id=#{rowid}")
+			puts rowid
+			allrowsresult = Govcensu.find_by(idd:rowid)
+			#puts allrowsresult
 		rescue Exception=> e
 			puts e.message
 			puts e.backtrace.inspect
@@ -46,6 +53,7 @@ class WelcomeController < ActionController::Base
 	end
 
 	def readjson
+		puts "welcome"
 		url = 'http://api.census.gov/data/2014/acs1/variables.json'
 		response = RestClient.get(url)
 		parsedjson = JSON.parse(response)
@@ -62,7 +70,7 @@ class WelcomeController < ActionController::Base
 			labelsubstring = label[0..15]
 			conceptsubstring= concept[0..15]
 			#@conn.exec("insert into govcensus values (#{i},'#{mainkey}','#{labelsubstring}','#{conceptsubstring}','#{innerkeyvalues[innerkeysarray[2]]}')")
-			dataupdate=govcensus.create(id:i,govid:mainkey,label:labelsubstring,concept:conceptsubstring,predicatetype:innerkeyvalues[innerkeysarray[2]])
+			dataupdate=Govcensu.create(idd:i,govid:mainkey,label:labelsubstring,concept:conceptsubstring,predicatetype:innerkeyvalues[innerkeysarray[2]])
       		dataupdate.save!
 		end
 	end
@@ -73,10 +81,15 @@ class WelcomeController < ActionController::Base
 		retrievedrowjson = retrievedrow.to_json
 		#render :json => retrievedrow.to_json
 	 	puts retrievedrowjson
-		respond_to do |format|
-			format.json {render :json => retrievedrow }
+	 	puts "hiiii"
+		# respond_to do |format|
+		# 	format.json {render :json => retrievedrow }
 
-			#format.json {retrievedrowjson}
-    	end
+		# 	#format.json {retrievedrowjson}
+  #   	end
+    	respond_to do |t|
+    		t.html
+    		t.json {render json: retrievedrow}
+  		end
 	end
 end

@@ -27,14 +27,16 @@
             type: "GET",
             dataType: 'json',
             success: function (ajaxdata) {
-            	data = ajaxdata[0];
+            	data = ajaxdata;
+                //alert(data);
             	if ($("table").hasClass("parent")) {
                     if(j==0){
                         $("table").removeClass("parent").addClass("new-parent");
                         return;
                     }
-                    if(data["id"]!=null) {
-                        var ee = $('<tr><td style="padding:0 15px 0 15px;">' + data["id"] + '</td><td style="padding:0 15px 0 15px;">' + data["govid"] + '</td><td style="padding:0 15px 0 15px;">' + data["label"] + '</td><td style="padding:0 15px 0 15px;">' + data["concept"] + '</td><td style="padding:0 15px 0 15px;">' +data["predicatetype"] +'</td></tr>');
+                    if(data["idd"]!=null) {
+
+                        var ee = $('<tr><td style="padding:0 15px 0 15px;">' + data["idd"] + '</td><td style="padding:0 15px 0 15px;">' + data["govid"] + '</td><td style="padding:0 15px 0 15px;">' + data["label"] + '</td><td style="padding:0 15px 0 15px;">' + data["concept"] + '</td><td style="padding:0 15px 0 15px;">' +data["predicatetype"] +'</td></tr>');
                         ee.hide();
                         $('tr:last-child').after(ee);
                         ee.fadeIn("slow");

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idd: 1
+  govid: MyString
+  label: MyString
+  concept: MyString
+  predicatetype: MyString
+
+two:
+  idd: 1
+  govid: MyString
+  label: MyString
+  concept: MyString
+  predicatetype: MyString

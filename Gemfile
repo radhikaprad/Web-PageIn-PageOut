@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rest-client', '1.8.0'
 
-gem 'pg', '~> 0.15'
+gem 'pg'
 
 gem 'json' , '1.8.3'
 
@@ -52,5 +52,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
 end
 

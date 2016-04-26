@@ -19,8 +19,10 @@ class WelcomeController < ActionController::Base
 
 	def everyrowindb(rowid)
 		connect
-		
-		result=@conn.exec("SELECT count(*) FROM govcensus")
+		puts "hello"
+		result=@conn.exec("SELECT count(govid) FROM govcensus")
+		puts "bye"
+
 		for i in result
 			puts i['count']
 			if i['count']== "0"
@@ -59,7 +61,9 @@ class WelcomeController < ActionController::Base
 			predicate= innerkeyvalues[innerkeysarray[2]]
 			labelsubstring = label[0..15]
 			conceptsubstring= concept[0..15]
-			@conn.exec("insert into govcensus values (#{i},'#{mainkey}','#{labelsubstring}','#{conceptsubstring}','#{innerkeyvalues[innerkeysarray[2]]}')")
+			#@conn.exec("insert into govcensus values (#{i},'#{mainkey}','#{labelsubstring}','#{conceptsubstring}','#{innerkeyvalues[innerkeysarray[2]]}')")
+			dataupdate=govcensus.create(id:i,govid:mainkey,label:labelsubstring,concept:conceptsubstring,predicatetype:innerkeyvalues[innerkeysarray[2]])
+      		dataupdate.save!
 		end
 	end
 

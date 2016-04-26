@@ -1,11 +1,10 @@
 class CreatePosts < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
-      t.string :title
-      t.string :author
-      t.text :body
-
-      t.timestamps null: false
+    create_table :govcensus do |t|
+      t.string  :govid
+      t.string  :label  
+      t.string  :concept 
+      t.string  :predicatetype
     end
   end
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
-  get 'welcome/index'
+  #get 'welcome/index'
   root 'welcome#index'
   get 'tabledata' => 'welcome#tabledata'
   get 'tabledata/:i' => 'welcome#tabledata'

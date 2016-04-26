@@ -22,7 +22,7 @@ default: &default
   pool: 5
 
 development:
-  <<: *default
+
   database: emptyapp_development
   adapter: postgresql
   encoding: unicode
@@ -35,7 +35,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: radhikaprad
+  username: 
   password:
 
   # The specified database role being used to connect to postgres.

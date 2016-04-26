@@ -16,19 +16,8 @@ ActiveRecord::Schema.define(version: 20160423232055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "census", force: :cascade do |t|
-    t.string "govdataid",     limit: 50, null: false
-    t.string "label",         limit: 10
-    t.string "concept",       limit: 10, null: false
-    t.string "predicatetype", limit: 3
-  end
-
-  create_table "gov", force: :cascade do |t|
-    t.string "govdataid",     limit: 5
-    t.string "label",         limit: 5
-    t.string "concept",       limit: 5
-    t.string "predicatetype", limit: 3
-  end
+ 
+  
 
   create_table "govcensus", force: :cascade do |t|
     t.string "govid",         limit: 100
@@ -37,19 +26,5 @@ ActiveRecord::Schema.define(version: 20160423232055) do
     t.string "predicatetype", limit: 3
   end
 
-  create_table "govtable", force: :cascade do |t|
-    t.string "govdataid",     limit: 10
-    t.string "label",         limit: 10
-    t.string "concept",       limit: 10
-    t.string "predicatetype", limit: 3
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "author"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end

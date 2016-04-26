@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web Data Project</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(document).ready(function(){
+
+    var o=0;
+    var j=0;
+
+    var $fact=$('.parent');
+    if($("table").hasClass("parent") && j==0) {
+        $fact.append('<tr><th style="padding:0 15px 0 15px;">ID</th><th style="padding:0 15px 0 15px;">GOVID</th><th style="padding:0 15px 0 15px;">LABEL</th><th style="padding:0 15px 0 15px;">CONCEPT</th><th style="padding:0 15px 0 15px;">PREDICATE</th></tr>').fadeIn("slow");
+
+        var i = 2;
+        j=1;
+        
+        eachajaxcall(i,j,o);
+    }
+        function eachajaxcall(i,j,o) {
+        $.ajax({
+            url: "tabledata/"+i ,
+            type: "GET",
+            dataType: 'json',
+            success: function (ajaxdata) {
+            	data = ajaxdata[0];
+            	if ($("table").hasClass("parent")) {
+                    if(j==0){
+                        $("table").removeClass("parent").addClass("new-parent");
+                        return;
+                    }
+                    if(data["id"]!=null) {
+                        var ee = $('<tr><td style="padding:0 15px 0 15px;">' + data["id"] + '</td><td style="padding:0 15px 0 15px;">' + data["govid"] + '</td><td style="padding:0 15px 0 15px;">' + data["label"] + '</td><td style="padding:0 15px 0 15px;">' + data["concept"] + '</td><td style="padding:0 15px 0 15px;">' +data["predicatetype"] +'</td></tr>');
+                        ee.hide();
+                        $('tr:last-child').after(ee);
+                        ee.fadeIn("slow");
+                        o = o + 1;
+                    }
+
+                    if(o==20){
+                        $('.parent tr:eq(1)').remove()
+                        o=o-1;
+                    }
+                    if(i==101 || j==0) {
+                        return;   
+                    }
+                    setTimeout(eachajaxcall,500,i+1,j,o);
+                }
+            },
+            error: function(xhr, status, error) {
+				var err = eval("(" + xhr.responseText + ")");
+				alert(err.Message);
+			},
+        });
+    }
+});
+
+  </script>
+</head>
+<body>
+<table class="parent" id="table"  border="0" style="width:50%" value="a"></table>
+</body>
+</html>

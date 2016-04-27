@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160427001611) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "govcensus", force: :cascade do |t|
     t.integer  "idd"
     t.string   "govid"

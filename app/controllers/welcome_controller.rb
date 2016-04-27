@@ -18,7 +18,7 @@ class WelcomeController < ActionController::Base
 	# end
 
 	def everyrowindb(rowid)
-		connect
+		#connect
 		puts "hello"
 		#result=@conn.exec("SELECT count(govid) FROM govcensus")
 		result=Govcensu.all
@@ -47,7 +47,8 @@ class WelcomeController < ActionController::Base
 			puts e.message
 			puts e.backtrace.inspect
 		ensure
-			disconnect
+			#disconnect
+			puts "fff"
 		end
 		return allrowsresult
 	end

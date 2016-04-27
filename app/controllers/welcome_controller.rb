@@ -5,17 +5,17 @@ require 'json'
 class WelcomeController < ActionController::Base
 	def index
 	end
-	def connect
-		@conn = PG.connect(
-			:dbname => "emptyapp_development",
-			:user => "",
-			:password => "")
+	# def connect
+	# 	@conn = PG.connect(
+	# 		:dbname => "emptyapp_development",
+	# 		:user => "",
+	# 		:password => "")
 		
-	end
+	# end
 
-	def disconnect
-		@conn.close
-	end
+	# def disconnect
+	# 	@conn.close
+	# end
 
 	def everyrowindb(rowid)
 		connect
